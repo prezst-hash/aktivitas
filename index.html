@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <base target="_top">
+    <style>
+      :root {
+        --primary-color: #f97316;
+        --hover-color: #ea580c;
+        --bg-color: #f8fafc;
+      }
+      body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--bg-color);
+        display: flex;
+        justify-content: center;
+        padding: 2rem 1rem;
+        margin: 0;
+      }
+      .card {
+        background: white;
+        padding: 2rem;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+        width: 100%;
+        max-width: 500px;
+      }
+      h2 { margin-top: 0; color: #1e293b; text-align: center; }
+      .form-group { margin-bottom: 1.5rem; }
+      label.title {
+        display: block; margin-bottom: 0.5rem; font-weight: 600; color: #475569; font-size: 0.9rem;
+      }
+      input[type="number"], select {
+        width: 100%; padding: 0.75rem; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; font-family: inherit;
+      }
+      input:focus, select:focus { outline: none; border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(249, 115, 22, 0.1); }
+      
+      /* --- Desain Pilihan Sepatu Bergambar --- */
+      .shoe-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+      }
+      .shoe-grid input[type="radio"] { display: none; }
+      
+      .shoe-card {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border: 2px solid #e2e8f0;
+        border-radius: 8px;
+        padding: 10px;
+        cursor: pointer;
+        transition: all 0.2s;
+        text-align: center;
+      }
+      .shoe-card img {
+        width: 100px;
+        height: 100px;
+        object-fit: contain;
+        margin-bottom: 8px;
+      }
+      .shoe-name { font-size: 0.75rem; color: #475569; font-weight: 500; }
+
+      .shoe-grid input[type="radio"]:checked + .shoe-card {
+        border-color: var(--primary-color);
+        background-color: #fff7ed;
+      }
+      .shoe-grid input[type="radio"]:checked + .shoe-card .shoe-name {
+        color: var(--primary-color);
+        font-weight: 700;
+      }
+      .shoe-card:hover { border-color: #cbd5e1; background-color: #f8fafc; }
+      
+      /* --- Desain Tombol & Notifikasi --- */
+      button { width: 100%; padding: 0.875rem; background-color: var(--primary-color); color: white; border: none; border-radius: 6px; font-weight: bold; font-size: 1rem; cursor: pointer; transition: background-color 0.2s; }
+      button:hover { background-color: var(--hover-color); }
+      button:disabled { background-color: #94a3b8; cursor: not-allowed; }
+      #notifikasi { margin-top: 1rem; padding: 0.75rem; border-radius: 6px; text-align: center; display: none; font-weight: 500; }
+      .sukses { background-color: #dcfce7; color: #166534; }
+      .error { background-color: #fee2e2; color: #991b1b; }
+    </style>
+  </head>
+  <body>
+
+    <div class="card">
+      <h2>Input Aktivitas Olahraga</h2>
+      
+      <form id="formInput">
+        
+        <div class="form-group">
+          <label class="title" for="jenisOlahraga">Jenis Olahraga</label>
+          <select id="jenisOlahraga" name="jenisOlahraga" required>
+            <option value="">-- Pilih Jenis Olahraga --</option>
+            <option value="Walk">Walk</option>
+            <option value="Run">Run</option>
+          </select>
+        </div>
+        
+        <div class="form-group">
+          <label class="title" for="jarak">Jarak (dalam km)</label>
+          <input type="number" step="0.01" id="jarak" name="jarak" required placeholder="Contoh: 5.5">
+        </div>
+
+        <div class="form-group">
+          <label class="title">Sepatu yang Digunakan</label>
+          
+          <div class="shoe-grid">
+            <!-- SEPATU 1 -->
+            <input type="radio" name="sepatu" id="shoe1" value="Heiden Heritage Ultra Stryde Indigo Flare" required>
+            <label for="shoe1" class="shoe-card">
+              <img src="https://lh3.googleusercontent.com/d/1A_EwgGqFFzB2EW5CwKkdQjUD6-X_2tnr" alt="Heiden Heritage Ultra Stryde Indigo Flare">
+              <span class="shoe-name">Heiden Heritage Ultra Stryde Indigo Flare</span>
+            </label>
+
+            <!-- SEPATU 2 -->
+            <input type="radio" name="sepatu" id="shoe2" value="Kanky Story Nobeta White/Green" required>
+            <label for="shoe2" class="shoe-card">
+              <img src="https://lh3.googleusercontent.com/d/1KJz8um-BUlmYZxaMb11t_jessuI1SyPO" alt="Kanky Story Nobeta White/Green">
+              <span class="shoe-name">Kanky Story Nobeta White/Green</span>
+            </label>
+
+            <!-- SEPATU 3 -->
+            <input type="radio" name="sepatu" id="shoe3" value="Kanky Solace Black/Ink Blue" required>
+            <label for="shoe3" class="shoe-card">
+              <img src="https://lh3.googleusercontent.com/d/1d-sboRGS4tYrBLQjhHiWA1f6h1_Ue8cV" alt="Kanky Solace Black/Ink Blue">
+              <span class="shoe-name">Kanky Solace Black/Ink Blue</span>
+            </label>
+
+            <!-- SEPATU 4 -->
+            <input type="radio" name="sepatu" id="shoe4" value="Kanky Story Nobeta White/Grey" required>
+            <label for="shoe4" class="shoe-card">
+              <img src="https://lh3.googleusercontent.com/d/1xqEfvNpUdR0Zu7trT5vV_DbEx5I6aVNK" alt="Kanky Story Nobeta White/Grey">
+              <span class="shoe-name">Kanky Story Nobeta White/Grey</span>
+            </label>
+
+            <!-- SEPATU 5 -->
+            <input type="radio" name="sepatu" id="shoe5" value="Adidas Ultrarun 5" required>
+            <label for="shoe5" class="shoe-card">
+              <img src="https://lh3.googleusercontent.com/d/1zAQKqa5-po2Wok5rTpVFp-fzcMCRpL7L" alt="Adidas Ultrarun 5">
+              <span class="shoe-name">Adidas Ultrarun 5</span>
+            </label>
+
+            <!-- SEPATU 6 -->
+            <input type="radio" name="sepatu" id="shoe6" value="Kanky Story Jimmu" required>
+            <label for="shoe6" class="shoe-card">
+              <img src="https://lh3.googleusercontent.com/d/1KsPEzwUG9kSAV7oUyPAMIZA3GeYzcE5B" alt="Kanky Story Jimmu">
+              <span class="shoe-name">Kanky Story Jimmu</span>
+            </label>
+
+            <!-- SEPATU 7 -->
+            <input type="radio" name="sepatu" id="shoe7" value="Asics Gel-1090 V2 Green" required>
+            <label for="shoe7" class="shoe-card">
+              <img src="https://lh3.googleusercontent.com/d/1v1IRStEKj5wTY7yu5j1lERzvnLJj3K6m" alt="Asics Gel-1090 V2 Green">
+              <span class="shoe-name">Asics Gel-1090 V2 Green</span>
+            </label>
+
+            <!-- SEPATU 8 -->
+            <input type="radio" name="sepatu" id="shoe8" value="Nike Downshifter 14" required>
+            <label for="shoe8" class="shoe-card">
+              <img src="https://lh3.googleusercontent.com/d/1M-OBkpKFyKCfyH-V_SdfBPCP89d82oGs" alt="Nike Downshifter 14">
+              <span class="shoe-name">Nike Downshifter 14</span>
+            </label>
+          </div>
+        </div>
+        
+        <button type="submit" id="btnSubmit">Kirim Data</button>
+      </form>
+      
+      <div id="notifikasi"></div>
+    </div>
+
+    <script>
+      document.getElementById('formInput').addEventListener('submit', function(e) {
+        e.preventDefault(); 
+        
+        var tombol = document.getElementById('btnSubmit');
+        var notif = document.getElementById('notifikasi');
+        
+        tombol.disabled = true;
+        tombol.innerText = 'Menyimpan...';
+        notif.style.display = 'none';
+
+        var sepatuTerpilih = document.querySelector('input[name="sepatu"]:checked');
+        var nilaiSepatu = sepatuTerpilih ? sepatuTerpilih.value : "";
+
+        var dataForm = {
+          jenisOlahraga: document.getElementById('jenisOlahraga').value,
+          jarak: document.getElementById('jarak').value,
+          sepatu: nilaiSepatu
+        };
+
+        google.script.run
+          .withSuccessHandler(function(respon) {
+            tampilkanNotifikasi(respon.status, respon.pesan);
+          })
+          .withFailureHandler(function(error) {
+            tampilkanNotifikasi('error', 'Koneksi terputus: ' + error.message);
+          })
+          .simpanData(dataForm);
+      });
+
+      function tampilkanNotifikasi(status, pesan) {
+        var tombol = document.getElementById('btnSubmit');
+        var notif = document.getElementById('notifikasi');
+        
+        notif.innerText = pesan;
+        notif.style.display = 'block';
+        notif.className = ''; 
+        notif.classList.add(status); 
+
+        if(status === 'sukses') {
+          document.getElementById('formInput').reset(); 
+        }
+
+        tombol.disabled = false;
+        tombol.innerText = 'Kirim Data';
+      }
+    </script>
+  </body>
+</html>
