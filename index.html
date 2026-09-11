@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <base target="_top">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Input Data Olahraga</title>
     <style>
       :root {
         --primary-color: #f97316;
@@ -170,6 +172,9 @@
     </div>
 
     <script>
+      // GANTI STRING DI BAWAH DENGAN URL WEB APP ANDA YANG BARU
+      const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx9w51t3C1WmPYHblIRfVZCwpCjAQ6-05i_mmLUXMwklkrPa-i4WCkecqoyVZcN76wV/exec';
+
       document.getElementById('formInput').addEventListener('submit', function(e) {
         e.preventDefault(); 
         
@@ -189,14 +194,23 @@
           sepatu: nilaiSepatu
         };
 
-        google.script.run
-          .withSuccessHandler(function(respon) {
-            tampilkanNotifikasi(respon.status, respon.pesan);
-          })
-          .withFailureHandler(function(error) {
-            tampilkanNotifikasi('error', 'Koneksi terputus: ' + error.message);
-          })
-          .simpanData(dataForm);
+        // Menggunakan fetch() sebagai pengganti google.script.run
+        fetch(SCRIPT_URL, {
+          method: 'POST',
+          mode: 'no-cors', // Penting untuk menghindari error CORS saat mengirim ke Google Apps Script
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(dataForm)
+        })
+        .then(function() {
+          // Karena menggunakan mode 'no-cors', response dari server menjadi 'opaque'
+          // Kita asumsikan sukses jika fetch berhasil berjalan tanpa error jaringan
+          tampilkanNotifikasi('sukses', 'Data olahraga Anda telah berhasil direkam.');
+        })
+        .catch(function(error) {
+          tampilkanNotifikasi('error', 'Koneksi terputus: ' + error.message);
+        });
       });
 
       function tampilkanNotifikasi(status, pesan) {
