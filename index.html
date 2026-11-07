@@ -80,6 +80,26 @@
       #notifikasi { margin-top: 1rem; padding: 0.75rem; border-radius: 6px; text-align: center; display: none; font-weight: 500; }
       .sukses { background-color: #dcfce7; color: #166534; }
       .error { background-color: #fee2e2; color: #991b1b; }
+
+      /* --- Km per sepatu (di kartu pilihan) --- */
+      .shoe-km { font-size: 0.7rem; color: #94a3b8; margin-top: 4px; }
+      .shoe-km.aus { color: #dc2626; font-weight: 700; }
+
+      /* --- Statistik --- */
+      .stats { margin-top: 2rem; border-top: 1px solid #e2e8f0; padding-top: 1.5rem; }
+      .stats h3 { margin: 0 0 1rem; color: #1e293b; font-size: 1.05rem; text-align: center; }
+      .stat-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 1.25rem; }
+      .stat-box { background: #fff7ed; border-radius: 8px; padding: 10px 6px; text-align: center; }
+      .stat-box .angka { font-size: 1.2rem; font-weight: 700; color: var(--primary-color); }
+      .stat-box .ket { font-size: 0.7rem; color: #64748b; }
+      .bar-item { margin-bottom: 10px; font-size: 0.78rem; color: #475569; }
+      .bar-label { display: flex; justify-content: space-between; margin-bottom: 3px; gap: 8px; }
+      .bar-track { background: #f1f5f9; border-radius: 4px; height: 8px; overflow: hidden; }
+      .bar-fill { height: 100%; background: var(--primary-color); border-radius: 4px; }
+      .bar-fill.aus { background: #dc2626; }
+      .riwayat { list-style: none; padding: 0; margin: 1rem 0 0; font-size: 0.78rem; color: #475569; }
+      .riwayat li { padding: 6px 0; border-bottom: 1px dashed #e2e8f0; }
+      .muted { color: #94a3b8; font-size: 0.8rem; text-align: center; }
     </style>
   </head>
   <body>
@@ -110,56 +130,56 @@
             <!-- SEPATU 1 -->
             <input type="radio" name="sepatu" id="shoe1" value="Heiden Heritage Ultra Stryde Indigo Flare" required>
             <label for="shoe1" class="shoe-card">
-              <img src="https://lh3.googleusercontent.com/d/1A_EwgGqFFzB2EW5CwKkdQjUD6-X_2tnr" alt="Heiden Heritage Ultra Stryde Indigo Flare">
+              <img loading="lazy" src="https://lh3.googleusercontent.com/d/1A_EwgGqFFzB2EW5CwKkdQjUD6-X_2tnr" alt="Heiden Heritage Ultra Stryde Indigo Flare">
               <span class="shoe-name">Heiden Heritage Ultra Stryde Indigo Flare</span>
             </label>
 
             <!-- SEPATU 2 -->
             <input type="radio" name="sepatu" id="shoe2" value="Kanky Story Nobeta White/Green" required>
             <label for="shoe2" class="shoe-card">
-              <img src="https://lh3.googleusercontent.com/d/1KJz8um-BUlmYZxaMb11t_jessuI1SyPO" alt="Kanky Story Nobeta White/Green">
+              <img loading="lazy" src="https://lh3.googleusercontent.com/d/1KJz8um-BUlmYZxaMb11t_jessuI1SyPO" alt="Kanky Story Nobeta White/Green">
               <span class="shoe-name">Kanky Story Nobeta White/Green</span>
             </label>
 
             <!-- SEPATU 3 -->
             <input type="radio" name="sepatu" id="shoe3" value="Kanky Solace Black/Ink Blue" required>
             <label for="shoe3" class="shoe-card">
-              <img src="https://lh3.googleusercontent.com/d/1d-sboRGS4tYrBLQjhHiWA1f6h1_Ue8cV" alt="Kanky Solace Black/Ink Blue">
+              <img loading="lazy" src="https://lh3.googleusercontent.com/d/1d-sboRGS4tYrBLQjhHiWA1f6h1_Ue8cV" alt="Kanky Solace Black/Ink Blue">
               <span class="shoe-name">Kanky Solace Black/Ink Blue</span>
             </label>
 
             <!-- SEPATU 4 -->
             <input type="radio" name="sepatu" id="shoe4" value="Kanky Story Nobeta White/Grey" required>
             <label for="shoe4" class="shoe-card">
-              <img src="https://lh3.googleusercontent.com/d/1xqEfvNpUdR0Zu7trT5vV_DbEx5I6aVNK" alt="Kanky Story Nobeta White/Grey">
+              <img loading="lazy" src="https://lh3.googleusercontent.com/d/1xqEfvNpUdR0Zu7trT5vV_DbEx5I6aVNK" alt="Kanky Story Nobeta White/Grey">
               <span class="shoe-name">Kanky Story Nobeta White/Grey</span>
             </label>
 
             <!-- SEPATU 5 -->
             <input type="radio" name="sepatu" id="shoe5" value="Adidas Ultrarun 5" required>
             <label for="shoe5" class="shoe-card">
-              <img src="https://lh3.googleusercontent.com/d/1zAQKqa5-po2Wok5rTpVFp-fzcMCRpL7L" alt="Adidas Ultrarun 5">
+              <img loading="lazy" src="https://lh3.googleusercontent.com/d/1zAQKqa5-po2Wok5rTpVFp-fzcMCRpL7L" alt="Adidas Ultrarun 5">
               <span class="shoe-name">Adidas Ultrarun 5</span>
             </label>
 
             <!-- SEPATU 6 -->
             <input type="radio" name="sepatu" id="shoe6" value="Kanky Story Jimmu" required>
             <label for="shoe6" class="shoe-card">
-              <img src="https://lh3.googleusercontent.com/d/1KsPEzwUG9kSAV7oUyPAMIZA3GeYzcE5B" alt="Kanky Story Jimmu">
+              <img loading="lazy" src="https://lh3.googleusercontent.com/d/1KsPEzwUG9kSAV7oUyPAMIZA3GeYzcE5B" alt="Kanky Story Jimmu">
               <span class="shoe-name">Kanky Story Jimmu</span>
             </label>
 
             <!-- SEPATU 7 -->
             <input type="radio" name="sepatu" id="shoe7" value="Asics Gel-1090 V2 Green" required>
             <label for="shoe7" class="shoe-card">
-              <img src="https://lh3.googleusercontent.com/d/1v1IRStEKj5wTY7yu5j1lERzvnLJj3K6m" alt="Asics Gel-1090 V2 Green">
+              <img loading="lazy" src="https://lh3.googleusercontent.com/d/1v1IRStEKj5wTY7yu5j1lERzvnLJj3K6m" alt="Asics Gel-1090 V2 Green">
               <span class="shoe-name">Asics Gel-1090 V2 Green</span>
             </label>
 
             <!-- SEPATU 8 -->
             <input type="radio" name="sepatu" id="shoe8" value="Nike Downshifter 14" required>
             <label for="shoe8" class="shoe-card">
-              <img src="https://lh3.googleusercontent.com/d/1M-OBkpKFyKCfyH-V_SdfBPCP89d82oGs" alt="Nike Downshifter 14">
+              <img loading="lazy" src="https://lh3.googleusercontent.com/d/1M-OBkpKFyKCfyH-V_SdfBPCP89d82oGs" alt="Nike Downshifter 14">
               <span class="shoe-name">Nike Downshifter 14</span>
             </label>
           </div>
@@ -169,66 +189,153 @@
       </form>
       
       <div id="notifikasi"></div>
+
+      <!-- STATISTIK (diisi otomatis dari Spreadsheet) -->
+      <div class="stats">
+        <h3>Statistik Saya</h3>
+        <div class="stat-row">
+          <div class="stat-box"><div class="angka" id="statTotal">–</div><div class="ket">Total km</div></div>
+          <div class="stat-box"><div class="angka" id="statBulan">–</div><div class="ket">Km bulan ini</div></div>
+          <div class="stat-box"><div class="angka" id="statJumlah">–</div><div class="ket">Aktivitas</div></div>
+        </div>
+        <div id="statSepatu"><p class="muted">Memuat statistik...</p></div>
+        <ul class="riwayat" id="statRiwayat"></ul>
+      </div>
     </div>
 
     <script>
-      // GANTI STRING DI BAWAH DENGAN URL WEB APP ANDA YANG BARU
+      // GANTI DENGAN URL WEB APP ANDA (Deploy > Kelola deployment > salin URL yang berakhiran /exec)
       const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbx9w51t3C1WmPYHblIRfVZCwpCjAQ6-05i_mmLUXMwklkrPa-i4WCkecqoyVZcN76wV/exec';
 
+      // Perkiraan umur pakai sepatu lari (km). Di atas angka ini sepatu ditandai merah.
+      const BATAS_SEPATU_KM = 600;
+
       document.getElementById('formInput').addEventListener('submit', function(e) {
-        e.preventDefault(); 
-        
+        e.preventDefault();
+
         var tombol = document.getElementById('btnSubmit');
         var notif = document.getElementById('notifikasi');
-        
+
+        var sepatuTerpilih = document.querySelector('input[name="sepatu"]:checked');
+        var jarak = parseFloat(document.getElementById('jarak').value);
+
+        if (!sepatuTerpilih) { tampilkanNotifikasi('error', 'Silakan pilih sepatu terlebih dahulu.'); return; }
+        if (!(jarak > 0)) { tampilkanNotifikasi('error', 'Jarak harus lebih dari 0 km.'); return; }
+
         tombol.disabled = true;
         tombol.innerText = 'Menyimpan...';
         notif.style.display = 'none';
 
-        var sepatuTerpilih = document.querySelector('input[name="sepatu"]:checked');
-        var nilaiSepatu = sepatuTerpilih ? sepatuTerpilih.value : "";
-
         var dataForm = {
           jenisOlahraga: document.getElementById('jenisOlahraga').value,
-          jarak: document.getElementById('jarak').value,
-          sepatu: nilaiSepatu
+          jarak: jarak,                      // dikirim sebagai ANGKA
+          sepatu: sepatuTerpilih.value
         };
 
-        // Menggunakan fetch() sebagai pengganti google.script.run
+        // Content-Type text/plain = "simple request": tidak memicu preflight CORS,
+        // sehingga balasan JSON dari Apps Script BISA dibaca (tidak perlu mode 'no-cors').
         fetch(SCRIPT_URL, {
           method: 'POST',
-          mode: 'no-cors', // Penting untuk menghindari error CORS saat mengirim ke Google Apps Script
-          headers: {
-            'Content-Type': 'application/json',
-          },
+          headers: { 'Content-Type': 'text/plain;charset=utf-8' },
           body: JSON.stringify(dataForm)
         })
-        .then(function() {
-          // Karena menggunakan mode 'no-cors', response dari server menjadi 'opaque'
-          // Kita asumsikan sukses jika fetch berhasil berjalan tanpa error jaringan
-          tampilkanNotifikasi('sukses', 'Data olahraga Anda telah berhasil direkam.');
+        .then(function(res) {
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+          return res.json();
+        })
+        .then(function(hasil) {
+          tampilkanNotifikasi(hasil.status === 'sukses' ? 'sukses' : 'error', hasil.pesan || 'Respons tidak dikenal.');
+          if (hasil.status === 'sukses') muatStatistik();
         })
         .catch(function(error) {
-          tampilkanNotifikasi('error', 'Koneksi terputus: ' + error.message);
+          tampilkanNotifikasi('error', 'Gagal terhubung ke server: ' + error.message +
+            '. Periksa URL Web App dan akses deployment ("Siapa saja").');
         });
       });
 
       function tampilkanNotifikasi(status, pesan) {
         var tombol = document.getElementById('btnSubmit');
         var notif = document.getElementById('notifikasi');
-        
-        notif.innerText = pesan;
-        notif.style.display = 'block';
-        notif.className = ''; 
-        notif.classList.add(status); 
 
-        if(status === 'sukses') {
-          document.getElementById('formInput').reset(); 
+        notif.textContent = pesan;
+        notif.style.display = 'block';
+        notif.className = '';
+        notif.classList.add(status);
+
+        if (status === 'sukses') {
+          document.getElementById('formInput').reset();
         }
 
         tombol.disabled = false;
         tombol.innerText = 'Kirim Data';
       }
+
+      // ---------- STATISTIK ----------
+      function muatStatistik() {
+        fetch(SCRIPT_URL + '?aksi=ringkasan')
+          .then(function(res) { return res.json(); })
+          .then(function(d) {
+            if (d.status !== 'sukses') throw new Error(d.pesan);
+            tampilkanStatistik(d);
+          })
+          .catch(function(err) {
+            document.getElementById('statSepatu').innerHTML = '';
+            var p = document.createElement('p');
+            p.className = 'muted';
+            p.textContent = 'Statistik belum bisa dimuat (' + err.message + ').';
+            document.getElementById('statSepatu').appendChild(p);
+          });
+      }
+
+      function fmt(x) { return Number(x).toLocaleString('id-ID', { maximumFractionDigits: 2 }); }
+
+      function tampilkanStatistik(d) {
+        document.getElementById('statTotal').textContent = fmt(d.totalKm);
+        document.getElementById('statBulan').textContent = fmt(d.kmBulanIni);
+        document.getElementById('statJumlah').textContent = d.jumlahAktivitas;
+
+        // Km di bawah nama setiap sepatu pada kartu pilihan
+        document.querySelectorAll('input[name="sepatu"]').forEach(function(radio) {
+          var label = document.querySelector('label[for="' + radio.id + '"]');
+          var km = d.perSepatu[radio.value] || 0;
+          var el = label.querySelector('.shoe-km');
+          if (!el) { el = document.createElement('span'); el.className = 'shoe-km'; label.appendChild(el); }
+          el.textContent = fmt(km) + ' km';
+          el.classList.toggle('aus', km >= BATAS_SEPATU_KM);
+        });
+
+        // Bar km per sepatu (terbanyak di atas)
+        var wadah = document.getElementById('statSepatu');
+        wadah.innerHTML = '';
+        Object.keys(d.perSepatu)
+          .sort(function(a, b) { return d.perSepatu[b] - d.perSepatu[a]; })
+          .forEach(function(nama) {
+            var km = d.perSepatu[nama];
+            var persen = Math.min(100, km / BATAS_SEPATU_KM * 100);
+            var item = document.createElement('div'); item.className = 'bar-item';
+            var lbl = document.createElement('div'); lbl.className = 'bar-label';
+            var n = document.createElement('span'); n.textContent = nama;
+            var v = document.createElement('span'); v.textContent = fmt(km) + ' / ' + BATAS_SEPATU_KM + ' km';
+            lbl.appendChild(n); lbl.appendChild(v);
+            var track = document.createElement('div'); track.className = 'bar-track';
+            var fill = document.createElement('div'); fill.className = 'bar-fill' + (km >= BATAS_SEPATU_KM ? ' aus' : '');
+            fill.style.width = persen + '%';
+            track.appendChild(fill);
+            item.appendChild(lbl); item.appendChild(track);
+            wadah.appendChild(item);
+          });
+
+        // Riwayat terakhir
+        var ul = document.getElementById('statRiwayat');
+        ul.innerHTML = '';
+        d.riwayat.forEach(function(r) {
+          var li = document.createElement('li');
+          li.textContent = r.tanggal + ' · ' + r.jenis + ' ' + fmt(r.jarak) + ' km · ' + r.sepatu;
+          ul.appendChild(li);
+        });
+      }
+
+      muatStatistik();
     </script>
   </body>
 </html>
